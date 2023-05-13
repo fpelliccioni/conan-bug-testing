@@ -17,7 +17,8 @@ Here, I provide code and instructions to reproduce this issue. It was tested on 
 ```
 cd project1
 conan lock create conanfile.py --version=1.0.0 --update
-cd project2
+
+cd ../project2
 conan lock create conanfile.py --version=1.0.0 --update
 ```
 
@@ -27,6 +28,7 @@ conan lock create conanfile.py --version=1.0.0 --update
 cd project1
 conan lock create conanfile.py --version 1.0.0 --lockfile=conan.lock --lockfile-out=build/conan.lock
 conan create conanfile.py --version 1.0.0 --lockfile=build/conan.lock  --build=missing
+cd ..
 ```
 
 ## Build Project 2
