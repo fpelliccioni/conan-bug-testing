@@ -48,8 +48,5 @@ class project1Recipe(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["project1"]
-
-
-
-
+        self.cpp_info.requires = ["boost::program_options", "boost::thread"]
 

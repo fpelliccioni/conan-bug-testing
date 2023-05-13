@@ -1,3 +1,16 @@
+# It works
+
+Adding
+
+```
+    def package_info(self):
+        ...
+        self.cpp_info.requires = ["boost::program_options", "boost::thread"]
+```
+
+Into `project1` Conan recipe fixed the problem.
+
+
 # Description
 
 The issue is as follows: I have a project named Project1 that depends on Boost (a few libraries) and Catch2, and it consists of a library and an executable with unit tests. I have another project, named Project2, which depends on Project1 and Catch2; it too is a library and an executable with unit tests.
