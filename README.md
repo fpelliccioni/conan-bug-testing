@@ -12,7 +12,7 @@ Here, I provide code and instructions to reproduce this issue. It was tested on 
 
 # How to reproduce
 
-# Create the lock files, just for the 1st time.
+## Create the lock files, just for the 1st time.
 
 ```
 cd project1
@@ -21,7 +21,7 @@ cd project2
 conan lock create conanfile.py --version=1.0.0 --update
 ```
 
-# Build Project 1
+## Build Project 1
 
 ```
 cd project1
@@ -29,7 +29,7 @@ conan lock create conanfile.py --version 1.0.0 --lockfile=conan.lock --lockfile-
 conan create conanfile.py --version 1.0.0 --lockfile=build/conan.lock  --build=missing
 ```
 
-# Build Project 2
+## Build Project 2
 
 ```
 cd project2
@@ -59,11 +59,11 @@ libproject1.a
 /Users/fernando/.conan2/p/catch1014972ea6d56/p/lib/libCatch2.a
 ```
 
-Ok: it link the proper libs.
+**Ok: it link the proper libs.**
 
 # When linking project2_test
 
-Linking error:
+**Linking error:**
 
 ```
 Undefined symbols for architecture x86_64:
@@ -76,7 +76,7 @@ make[1]: *** [CMakeFiles/project2_test.dir/all] Error 2
 make: *** [all] Error 2
 ```
 
-Why? Because it is linking the whole Boost.
+Why? Because it is linking the whole Boost:
 
 ```
 [100%] Linking CXX executable project2_test
